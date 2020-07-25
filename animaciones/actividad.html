@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;  
+  }
+  .transformer {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(170, 172, 71);
+    transition: 1s;
+  }
+  .container:hover .transformer{
+    background-color: rgb(183, 192, 53);
+    
+    animation-name: trans, noche ;
+    animation-duration: 1.5s, 1.8s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    /* animation-iteration-count: infinite; */
+  }
+
+  @keyframes trans {
+    from {
+      border-radius: 0 ;
+      transform: translateX(calc(500px - 50px)) ;
+    }
+    to {
+      border-radius: 50%;
+      transform: translatey(calc(100px - 50px)) ;
+    }
+  }
+  @keyframes noche {
+    from {
+      background-color: rgb(13, 15, 151);
+    }
+    to {
+      background-color: rgb(18, 20, 156);
+      width: 100px;
+  }
+}
+
+
+</style>
+
+<body>
+  
+  <div class="container" id="container">
+    <div class="transformer" id="transformer" ></div>
+  </div>
+
+
+  <script>
+    const $noche = document.getElementById("transformer");
+
+    $noche.addEventListener('animationend', (event) =>{
+      if (event.animationName==="trans"){
+        $noche.style.animationName = "noche";
+        $noche.style.animationDuration = "3s";
+
+      }
+    });
+
+
+  </script>
+</body>
+</html>

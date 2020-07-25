@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container{
+      border: 1px solid black;
+    }
+
+    .container:hover .cuadrado{
+      /* transform: rotateY(-45deg); */
+      
+      transform: rotatez(-360deg);
+     
+      /* transform: rotateX(-180deg) rotateZ(-180deg); */
+      /* transform: rotate(-45deg);  */
+      /* transform: rotate3d(1, 1, 1, 180deg); */
+        }
+
+    .cuadrado{
+      background-color: cadetblue;
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      transition: 3s;
+      transform-origin: 75% 25%;
+    }
+
+  </style>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">   </div>
+
+  </div>
+  
+</body>
+</html>

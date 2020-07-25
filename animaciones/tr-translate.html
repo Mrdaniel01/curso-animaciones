@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 200px;
+    }
+
+    .container{
+      border: 1px solid black;
+    }
+
+    .container:hover .cuadrado{
+     transform: translateZ( -100px) ;
+      }
+
+    .cuadrado{
+      background-color: rgb(85, 22, 158);
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      transition: .8s;
+    }
+
+  </style>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">   </div>
+
+  </div>
+  
+</body>
+</html>

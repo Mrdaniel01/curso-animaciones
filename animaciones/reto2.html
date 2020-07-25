@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto animaciones</title>
+  <style>
+    .container{
+      display: grid;
+      margin: 150px;
+      grid: repeat(4, 1fr) / repeat(4, 1fr);
+      grid-gap:15px ;
+      width: 200px;
+      height: 200px;
+      animation-name: gap-roll;
+      animation-duration: .8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+    }
+
+    .container:hover{
+      animation-name: roll;
+      animation-duration: 1.8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+    } 
+
+
+    .item{
+      border:1px solid chartreuse;      
+    }
+
+    .blue {
+      grid-column: 1 / span 3;
+      background-color: blue;
+    }
+
+    .yellow {
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 3;
+      background-color: yellow;
+    }
+
+    .red{
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 2;
+      background-color: red;
+    }
+
+    .green{
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 3;
+      background-color: green;
+    }
+
+    .purple{
+      grid-column: 2 / span 3;
+      grid-row: 4 / span 1;
+      background-color: purple;
+    }
+
+    @keyframes gap-roll {
+      from {
+        grid-gap: 10px;
+      }
+      to{
+        grid-gap: 25px;
+      }
+    }
+
+    @keyframes roll {
+      from {
+        transform: rotate(360deg);
+        filter: grayscale(0);
+      }
+      to {
+        transform: rotate(0deg);
+        filter: grayscale(100);
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item blue"></div>
+    <div class="item yellow"></div>
+    <div class="item red"></div>
+    <div class="item green"></div>
+    <div class="item purple"></div>
+  </div>
+</body>
+</html>
